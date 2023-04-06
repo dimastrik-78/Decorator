@@ -2,6 +2,8 @@
 
 namespace HotdogSystem
 {
+    //сериализованное поле
+    //неявные зависимости
     [CreateAssetMenu(fileName = "HotDog", menuName = "Hotdog")]
     public class HotDogSO : ScriptableObject
     {

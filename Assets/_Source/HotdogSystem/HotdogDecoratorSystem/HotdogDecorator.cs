@@ -1,12 +1,18 @@
 ﻿namespace HotdogSystem.HotdogDecoratorSystem
 {
-    public abstract class HotdogDecorator : Hotdog
+    // Конструктор
+    // Жесткие зависимости
+    public abstract class HotdogDecorator : AHotdog
     {
-        protected Hotdog Hotdog;
+        protected AHotdog Hotdog;
         
-        public HotdogDecorator(HotDogSO hotDogSo, Hotdog hotdog) : base(hotDogSo)
+        public HotdogDecorator(HotDogSO hotDogSo, AHotdog hotdog) : base(hotDogSo)
         {
-            // Hotdog = hotdog;
+            Hotdog = hotdog;
         }
+
+        public new int GetWeight() => Hotdog.GetWeight() + HotDogSo.Weight;
+
+        public new int GetCost() => Hotdog.GetCost() + HotDogSo.Cost;
     }
 }

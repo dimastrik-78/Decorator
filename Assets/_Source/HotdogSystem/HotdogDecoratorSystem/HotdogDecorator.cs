@@ -4,15 +4,15 @@
     // Жесткие зависимости
     public abstract class HotdogDecorator : AHotdog
     {
-        protected AHotdog Hotdog;
+        private readonly AHotdog _hotdog;
         
         public HotdogDecorator(HotDogSO hotDogSo, AHotdog hotdog) : base(hotDogSo)
         {
-            Hotdog = hotdog;
+            _hotdog = hotdog;
         }
 
-        public new int GetWeight() => Hotdog.GetWeight() + HotDogSo.Weight;
+        public override int GetWeight() => _hotdog.GetWeight() + HotDogSo.Weight;
 
-        public new int GetCost() => Hotdog.GetCost() + HotDogSo.Cost;
+        public override int GetCost() => _hotdog.GetCost() + HotDogSo.Cost;
     }
 }

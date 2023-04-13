@@ -10,10 +10,10 @@
 
         public HotDogSO HotDogSo { get; }
 
-        public string GetName() => HotDogSo.Name;
+        public virtual string GetName() => HotDogSo.Name;
 
-        public int GetWeight() => HotDogSo.Weight;
+        public virtual int GetWeight() => HotDogSo.Weight;
 
-        public int GetCost() => HotDogSo.Cost;
+        public virtual int GetCost() => HotDogSo.Cost;
     }
 }
